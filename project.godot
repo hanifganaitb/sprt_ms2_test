@@ -16,14 +16,24 @@ _global_script_class_icons={
 [application]
 
 config/name="sparta_milestone2_test1"
-run/main_scene="res://Control.tscn"
+run/main_scene="res://scenes/Login.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Session="*res://singleton/Session.tscn"
+Server="*res://singleton/ServerPlaceholder.gd"
 
 [display]
 
 window/size/width=720
 window/size/height=1280
+window/size/test_width=360
+window/size/test_height=640
+window/energy_saving/keep_screen_on=false
 window/handheld/orientation="portrait"
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 
