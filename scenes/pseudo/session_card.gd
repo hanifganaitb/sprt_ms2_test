@@ -1,6 +1,7 @@
 extends Control
 #class_name session_card
 
+export var session_id : String = ""
 export var session_info : String = ""
 export var date_info : String = ""
 export var status_ok : bool = true
@@ -30,3 +31,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass
+
+
+func _on_PseudoCard_pressed() -> void:
+	get_tree().change_scene("res://scenes/SessionDetails.tscn")
+	Session.current_session_id = session_id
+	pass # Replace with function body.

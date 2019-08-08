@@ -19,6 +19,8 @@ func _ready() -> void:
 
 				neo_session_card.status_ok = true if session["status"] == "ok" else false
 
+				neo_session_card.session_id = session["id"]
+
 				print(neo_session_card)
 
 				$VBoxContainer.add_child(neo_session_card)

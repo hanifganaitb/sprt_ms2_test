@@ -15,11 +15,11 @@ rect_min_size = Vector2( 0, 176 )
 script = ExtResource( 1 )
 
 [node name="PseudoCard" parent="." instance=ExtResource( 2 )]
-rect_min_size = Vector2( 688, 144 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PseudoCard"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 688, 144 )
@@ -45,7 +45,6 @@ margin_bottom = 120.0
 texture = ExtResource( 4 )
 
 [node name="Separator" type="CenterContainer" parent="PseudoCard/HBoxContainer"]
-editor/display_folded = true
 margin_left = 100.0
 margin_right = 116.0
 margin_bottom = 144.0
@@ -120,5 +119,6 @@ margin_top = 36.0
 margin_right = 72.0
 margin_bottom = 108.0
 texture = ExtResource( 6 )
+[connection signal="pressed" from="PseudoCard" to="." method="_on_PseudoCard_pressed"]
 
 [editable path="PseudoCard"]
