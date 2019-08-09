@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/pseudo/pseudo_bottom_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/pseudo/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/DefaultFontRes.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/pseudo/pseudo_card.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/pseudo/pseudo_date_card.gd" type="Script" id=5]
+
+[node name="ChangeDateScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 720, 144 )
+
+[node name="TopBar" type="Control" parent="."]
+anchor_right = 1.0
+
+[node name="Control" parent="TopBar" instance=ExtResource( 1 )]
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 144 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackButton" parent="TopBar/Control" instance=ExtResource( 2 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+next_scene = "res://scenes/SessionDetailsPage.tscn"
+
+[node name="Label" type="Label" parent="TopBar/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "GANTI HARI"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 144.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/ScrollContainer"]
+margin_right = 720.0
+margin_bottom = 714.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/CenterContainer"]
+margin_left = 16.0
+margin_right = 704.0
+margin_bottom = 714.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 64
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/CenterContainer/VBoxContainer"]
+margin_right = 688.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+text = "PILIH WAKTU BELAJAR ANDA"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer/CenterContainer/VBoxContainer"]
+editor/display_folded = true
+margin_top = 109.0
+margin_right = 688.0
+margin_bottom = 605.0
+custom_constants/separation = 32
+
+[node name="DateCard" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+editor/display_folded = true
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 688.0
+margin_bottom = 144.0
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer/DateCard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tanggal"
+valign = 1
+
+[node name="DateCard2" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+editor/display_folded = true
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 176.0
+margin_right = 688.0
+margin_bottom = 320.0
+script = ExtResource( 5 )
+date_offset = 2
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer/DateCard2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tanggal"
+valign = 1
+
+[node name="DateCard3" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
+editor/display_folded = true
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 352.0
+margin_right = 688.0
+margin_bottom = 496.0
+script = ExtResource( 5 )
+date_offset = 3
+
+[node name="Label" type="Label" parent="Control/ScrollContainer/CenterContainer/VBoxContainer/VBoxContainer/DateCard3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 3 )
+text = "Tanggal"
+valign = 1
+
+[node name="Label2" type="Label" parent="Control/ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 669.0
+margin_right = 688.0
+margin_bottom = 714.0
+custom_fonts/font = ExtResource( 3 )
+text = "TIDAK BISA GANTI HARI?"
+align = 1
+valign = 1

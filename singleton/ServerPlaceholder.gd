@@ -40,7 +40,7 @@ var teacher_info_3 = {
 				"sun":[] },
 			"rating":4.23
 			}
-var teachers_1 = [teacher_info_1, teacher_info_2]
+var teachers_1 = [teacher_info_1, teacher_info_2, teacher_info_3]
 var teachers_2 = [teacher_info_3]
 
 
@@ -51,7 +51,8 @@ var session_info_1 = {
 	"date":"10.08.2019",
 	"time":[13,14],
 	"status":"ok",
-	"reason":""
+	"reason":"",
+	"revision": 0
 }
 var session_info_2 = {
 	"id" : "12398213d0912u3",
@@ -60,7 +61,8 @@ var session_info_2 = {
 	"date":"11.08.2019",
 	"time":[16,17],
 	"status":"no",
-	"reason":"Tiba-tiba dipanggil dosen"
+	"reason":"Tiba-tiba dipanggil dosen",
+	"revision": 0
 }
 var session_info_3 = {
 	"id" : "12398213d0912o9",
@@ -69,7 +71,8 @@ var session_info_3 = {
 	"date":"12.08.2019",
 	"time":[17],
 	"status":"pending",
-	"reason":"Ada lab tambahan"
+	"reason":"Ada lab tambahan",
+	"revision": 0
 }
 var sessions = [session_info_1,session_info_2, session_info_3, session_info_1, session_info_1, session_info_1, session_info_1, session_info_1, session_info_1]
 

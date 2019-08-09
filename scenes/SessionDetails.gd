@@ -30,13 +30,28 @@ func _ready() -> void:
 			ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Icon/CenterContainer/No").visible = false
 			reason_node.visible = false
 			actions_node.visible = false
+			print('current_session_details["status"] ', current_session_details["status"] )
 		else:
 			ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Icon/CenterContainer/Ok").visible = false
 			ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Icon/CenterContainer/No").visible = true
-			reason_node.visible = false
-			reason_node.get_node("PseudoCard/MarginContainer/Label").set_text(current_session_details["reason"])
+			reason_node.visible = true
+			reason_node.get_node("PseudoCard/MarginContainer/VBoxContainer/Alasan").set_text(current_session_details["reason"])
 			if current_session_details["status"] == "no":
+				actions_node.visible = true
+				ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Label").set_text("Tidak ada guru yang dapat menggantikan pada waktu tersebut.")
+			else:
 				actions_node.visible = false
+				ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Label").set_text("Guru berhalangan hadir. Admin sedang mencarikan guru pengganti untuk Anda.")
+
+			ses_details_node.rect_size.y = ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Label").rect_size.y
+			ses_details_node.get_node("PseudoCard").rect_size.y = ses_details_node.get_node("PseudoCard/MarginContainer/HBoxContainer/Label").rect_size.y
+
+			print("ses_details_node.rect_size.y", ses_details_node.rect_size.y)
+			print('ses_details_node.get_node("PseudoCard").rect_size.y', ses_details_node.get_node("PseudoCard").rect_size.y)
+			print('ses_details_node.get_node("PseudoCard/MarginContainer").rect_size.y', ses_details_node.get_node("PseudoCard/MarginContainer").rect_size.y)
+
+			print('current_session_details["status"] ', current_session_details["status"] )
+
 
 
 
@@ -44,7 +59,7 @@ func _ready() -> void:
 
 func _get_current_session_details_from_id(id):
 	for session in Server.sessions:
-		if session["id"] == session_id:
+		if session["id"] == id:
 			current_session_details = session
 
 func _get_teacher_name_from_id(id):

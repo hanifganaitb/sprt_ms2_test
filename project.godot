@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Session="*res://singleton/Session.tscn"
 Server="*res://singleton/ServerPlaceholder.gd"
+Helper="*res://singleton/Helper.gd"
 
 [display]
 

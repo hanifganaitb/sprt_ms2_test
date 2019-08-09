@@ -7,6 +7,7 @@
 [ext_resource path="res://icons/ic_error_white_48dp.png" type="Texture" id=5]
 
 [node name="SessionDetails" type="ScrollContainer"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -138,10 +139,17 @@ custom_fonts/font = ExtResource( 3 )
 text = "[NAMA GURU]"
 
 [node name="SessionStatus" parent="VBoxContainer" instance=ExtResource( 2 )]
+editor/display_folded = true
 anchor_right = 0.0
 margin_top = 540.0
 margin_right = 720.0
 margin_bottom = 716.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PseudoCard" parent="VBoxContainer/SessionStatus" index="0"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/SessionStatus/PseudoCard" index="1"]
 anchor_right = 1.0
@@ -199,7 +207,6 @@ valign = 1
 autowrap = true
 
 [node name="Reason" parent="VBoxContainer" instance=ExtResource( 2 )]
-editor/display_folded = true
 anchor_right = 0.0
 margin_top = 720.0
 margin_right = 720.0
@@ -214,15 +221,30 @@ custom_constants/margin_top = 8
 custom_constants/margin_left = 8
 custom_constants/margin_bottom = 8
 
-[node name="Label" type="RichTextLabel" parent="VBoxContainer/Reason/PseudoCard/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Reason/PseudoCard/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 696.0
 margin_bottom = 136.0
-size_flags_horizontal = 3
-size_flags_vertical = 7
-custom_fonts/normal_font = ExtResource( 3 )
-text = "ALASAN"
+
+[node name="Pembatalan" type="Label" parent="VBoxContainer/Reason/PseudoCard/MarginContainer/VBoxContainer"]
+margin_right = 688.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 3 )
+text = "ALASAN PEMBATALAN"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Reason/PseudoCard/MarginContainer/VBoxContainer"]
+margin_top = 49.0
+margin_right = 688.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 672, 4 )
+
+[node name="Alasan" type="Label" parent="VBoxContainer/Reason/PseudoCard/MarginContainer/VBoxContainer"]
+margin_top = 57.0
+margin_right = 688.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 3 )
+text = "[ALASAN]"
 
 [node name="Actions" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 900.0

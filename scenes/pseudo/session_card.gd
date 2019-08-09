@@ -34,6 +34,6 @@ func _ready() -> void:
 
 
 func _on_PseudoCard_pressed() -> void:
-	get_tree().change_scene("res://scenes/SessionDetails.tscn")
+	get_tree().change_scene("res://scenes/SessionDetailsPage.tscn")
 	Session.current_session_id = session_id
 	pass # Replace with function body.
